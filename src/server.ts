@@ -70,7 +70,7 @@ import { AngularAppEngine, createRequestHandler } from '@angular/ssr';
 import { getContext } from '@netlify/angular-runtime/context.mjs';
 
 const angularAppEngine = new AngularAppEngine({
-  allowedHosts: ['*'],
+  allowedHosts: ['c46-final-project-angular.netlify.app', 'localhost'],
 });
 
 export async function netlifyAppEngineHandler(request: Request): Promise<Response> {
