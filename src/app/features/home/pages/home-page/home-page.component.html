@@ -1,6 +1,8 @@
-@defer (on immediate) {
-  <app-home-main-slider />
-}
+<div class="h-100 overflow-hidden">
+  @defer (on idle; hydrate on idle) {
+    <app-home-main-slider />
+  }
+</div>
 <!-- <app-home-website-info-banner /> -->
 <!-- <app-home-categories /> -->
 <!-- <app-home-offers-banner /> -->
