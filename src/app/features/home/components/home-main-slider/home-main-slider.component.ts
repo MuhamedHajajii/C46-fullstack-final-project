@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import function to register Swiper custom elements
-import { register } from 'swiper/element/bundle';
-register();
+// import { register } from 'swiper/element/bundle';
+// register();
 
 @Component({
   selector: 'app-home-main-slider',
