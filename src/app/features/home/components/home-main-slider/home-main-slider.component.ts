@@ -1,7 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import function to register Swiper custom elements
-// import { register } from 'swiper/element/bundle';
-// register();
+import { isPlatformBrowser } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-home-main-slider',
@@ -11,5 +9,15 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   styleUrl: './home-main-slider.component.css',
 })
 export class HomeMainSliderComponent {
+  platform = inject(PLATFORM_ID);
+
   spaceBetween = 10;
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platform)) {
+      import('swiper/element/bundle').then((swapper) => {
+        swapper.register();
+      });
+    }
+  }
 }
